@@ -7,7 +7,7 @@ export default function Main(props) {
     <main className="block col-2">
       <div>
         Ordenar por
-        <select onChange={(e) => setSortType(e.target.value)}>        
+        <select className="Box" onChange={(e) => setSortType(e.target.value)}>        
           <option value="name">Nome</option>
           <option value="score">Popularidade</option>
           <option value="price">Preço</option>
