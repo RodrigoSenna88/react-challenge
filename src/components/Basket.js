@@ -3,9 +3,13 @@ import React from 'react';
 export default function Basket(props) {
   const { cartItems, onAdd, onRemove } = props;
   const itemsPrice = cartItems.reduce((a, c) => a + c.qty * c.price, 0);
+
   const itemsQty = cartItems.reduce((a, c) => a + c.qty, 0);  
+
   const parcialShippingPrice = itemsQty * 10;
-  const shippingPrice = itemsPrice > 250 ? 0 : parcialShippingPrice;
+  const parcialTotalPrice = itemsPrice + parcialShippingPrice;
+
+  const shippingPrice = parcialTotalPrice > 250 ? 0 : parcialShippingPrice;
   const totalPrice = itemsPrice + shippingPrice;
   return (
     <aside className="block col-1">
