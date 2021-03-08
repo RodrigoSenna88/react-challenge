@@ -1,5 +1,5 @@
 body {
-  font-family: 'Helvetica';
+  font-family: Roboto;
 }
 h1,
 h2,
@@ -33,11 +33,13 @@ a {
 
 }
 .block {
-  background-color: #e0e0e0;
+  background-color: #cecef0;
   padding: 1rem;
   margin: 0.5rem;
   border-radius: 0.5rem;
+  color:rgb(130, 160, 96);
 }
+
 .text-right {
   text-align: right;
 }
@@ -50,8 +52,7 @@ button {
   margin: 0.1rem;
   border-radius: 0.5rem;
   border: 0.1rem #404040 solid;
-  background-color: #f0c040;
-  width: 100%;
+  background-color: #40f0c4;
   cursor: pointer;
 }
 button.add {
@@ -69,8 +70,13 @@ button.badge {
   width: 1.5rem;
 }
 
-productBox {
+div.productBox {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
 }
+
+
