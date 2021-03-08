@@ -3,18 +3,20 @@ import React from 'react';
 export default function Basket(props) {
   const { cartItems, onAdd, onRemove } = props;
   const itemsPrice = cartItems.reduce((a, c) => a + c.qty * c.price, 0);
-  const shippingPrice = itemsPrice > 250 ? 0 : (10 * cartItems.length);
+  const itemsQty = cartItems.reduce((a, c) => a + c.qty, 0);  
+  const parcialShippingPrice = itemsQty * 10;
+  const shippingPrice = itemsPrice > 250 ? 0 : parcialShippingPrice;
   const totalPrice = itemsPrice + shippingPrice;
   return (
     <aside className="block col-1">
       <h2>
       <img src={`${process.env.PUBLIC_URL}/assets/cart-icon.svg`} />
 
-        Cart Items
+        Itens
       </h2>
       <br/>
       <div>
-        {cartItems.length === 0 && <div>Cart is empty</div>}
+        {cartItems.length === 0 && <div>O carrinho está vazio</div>}
         {cartItems.map((item) => (
           <div key={item.id} className="row">
             <div className="col-2">{item.name}</div>
@@ -50,7 +52,7 @@ export default function Basket(props) {
 
             <div className="row">
               <div className="col-2">
-                <strong>Total Price</strong>
+                <strong>Preço total</strong>
               </div>
               <div className="col-1 text-right">
                 <strong>R${totalPrice.toFixed(2)}</strong>
@@ -59,7 +61,7 @@ export default function Basket(props) {
             <hr />
             <div className="row">
               <button onClick={() => alert('Implement Checkout!')}>
-                Checkout
+                Finalizar compra
               </button>
             </div>
           </>

@@ -4,6 +4,7 @@ export default function Product(props) {
   const { product, onAdd } = props;
   return (
     <div className="Box">
+      <br/>
       <img className="small" src={`${process.env.PUBLIC_URL}/assets/${product.image}`} alt={product.name} />
       <h3>{product.name}</h3>
       <div>R${product.price}</div>

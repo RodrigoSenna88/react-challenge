@@ -9,6 +9,10 @@ h3 {
 h1 {
   font-size: 1.5rem;
 }
+h1.Title {
+  color: rgb(130, 160, 96);
+  font-size: 3rem;
+}
 h2 {
   font-size: 1.2rem;
 }
